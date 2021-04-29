@@ -9,6 +9,7 @@ import java.util.List;
 
 public class MaxHeap {
     public static void main(String[] args) throws IOException {
+        //TODO 분할분석 공부 후에 다시 짜기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         List<Integer> list = new ArrayList<>();
