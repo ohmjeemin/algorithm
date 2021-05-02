@@ -3,7 +3,7 @@ package algowithjava.baekjoon.div;
 import java.io.IOException;
 import java.util.*;
 
-public class makeColorPaper {
+public class MakeColorPaper {
 
     public static int white = 0;
     public static int blue = 0;
