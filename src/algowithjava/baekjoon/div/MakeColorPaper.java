@@ -44,10 +44,10 @@ public class MakeColorPaper {
 
         int newSize = size / 2;
         // 재귀 호출
-        partition(row, col, newSize); // 2사분면
+        partition(row, col, newSize); // 4사분면
         partition(row, col + newSize, newSize); // 1사분면
         partition(row + newSize, col, newSize); // 3사분면
-        partition(row + newSize, col + newSize, newSize); // 4사분면
+        partition(row + newSize, col + newSize, newSize); // 2사분면
 
 
     }
