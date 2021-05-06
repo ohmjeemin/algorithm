@@ -33,9 +33,7 @@ public class PaperCnt  {
     public static void partition(int row, int col, int size){
 
         if(numberCheck(row, col, size)){
-            System.out.println("ㅎㅋ");
             if(board[row][col]==0){
-
                 zeroCnt++;
             }else if(board[row][col]==1){
                 oneCnt++;
@@ -44,28 +42,31 @@ public class PaperCnt  {
             }
             return;
         }
-        System.out.println("ㅜㅜ");
+
         int newSize = size/3;
-        partition(row, col, newSize);
-        partition(row,col + newSize, newSize);
-        partition(row + newSize, col, newSize);
-        partition(row + newSize, col + newSize, newSize);
+
+        partition(row, col, newSize);								// 왼쪽 위
+        partition(row, col + newSize, newSize);						// 중앙 위
+        partition(row, col + 2 * newSize, newSize);					// 오른쪽 위
+
+        partition(row + newSize, col, newSize);						// 왼쪽 중간
+        partition(row + newSize, col + newSize, newSize);			// 중앙 중간
+        partition(row + newSize, col + 2 * newSize, newSize);		// 오른쪽 중간
+
+        partition(row + 2 * newSize, col, newSize);					// 왼쪽 아래
+        partition(row + 2 * newSize, col + newSize, newSize);		// 중앙 아래
+        partition(row + 2 * newSize, col + 2 * newSize, newSize);	// 오른쪽 아래
     }
 
     public static boolean numberCheck(int row, int col, int size){
-        System.out.println("ㅎㅎㅎㅎ" +
-                "");
         int number = board[row][col];
-        System.out.println("number "+number);
         for(int i=row; i<row+size; i++){
             for(int j=col; j<col+size; j++){
-                System.out.println("board value "+board[i][j]);
-                if(number!=board[row][col]) {
+                if(number!=board[i][j]) {
                     return false;
                 }
             }
         }
-        System.out.println("33");
         return true;
     }
 
