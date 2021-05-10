@@ -1,8 +1,6 @@
 package algowithjava.baekjoon.div;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class PaperCnt  {
     public static int[][] board;
