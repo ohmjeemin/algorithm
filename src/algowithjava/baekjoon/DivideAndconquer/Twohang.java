@@ -1,4 +1,4 @@
-package algowithjava.baekjoon.div;
+package algowithjava.baekjoon.DivideAndconquer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
