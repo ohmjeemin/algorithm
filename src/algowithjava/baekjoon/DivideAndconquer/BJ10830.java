@@ -9,24 +9,64 @@ package algowithjava.baekjoon.DivideAndconquer;
  * ㅁ 출력: 첫째 줄부터 N개의 줄에 걸쳐 행렬 A를 B제곱한 결과를 출력한다.
  * */
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Scanner;
 
 public class BJ10830 {
     static int MOD = 1000, N;
-    static int[][] unitMatrix;
+    static int[][] unitMatrix; // 단위행렬
 
-    public static void main(String[] args) throws IOException {
-     Scanner sc =   new Scanner(System.in);
-     N = sc.nextInt();
-     long B = sc.nextLong();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        long B = sc.nextLong();
 
-     int[][] matrix = new int[N][N];
-     unitMatrix = new int[N][N];
+        int[][] matrix = new int[N][N];
+        unitMatrix = new int[N][N];
 
+        for (int i = 0; i < N; i++){
+            for (int j = 0; j < N; j++) {
+                matrix[i][j] = sc.nextInt() % MOD;
+            }
+        }
 
+        for (int i = 0; i < N; i++) {
+            unitMatrix[i][i] = 1;
+        }
+
+        matrix = powMatrix(B, matrix);
+
+        for (int[] m : matrix) {
+            for (int i : m) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
     }
 
+    // 행렬의 제곱근
+    static int[][] powMatrix(long n, int[][] matrix) {
+        if (n == 0) return unitMatrix;
+        if (n == 1) return matrix;
+
+        int[][] nMatrix = powMatrix(n / 2, matrix);
+        nMatrix = multipleMatrix(nMatrix, nMatrix);
+
+        return n % 2 == 0 ? nMatrix : multipleMatrix(nMatrix, matrix);
+    }
+
+    // 행렬의 곱셈
+    static int[][] multipleMatrix(int[][] m1, int[][] m2) {
+        int[][] matrix = new int[N][N];
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                for (int k = 0; k < N; k++) {
+                    matrix[i][j] += (m1[i][k] * m2[k][j]) % MOD;
+                }
+                matrix[i][j] %= MOD;
+            }
+        }
+
+        return matrix;
+    }
 }
