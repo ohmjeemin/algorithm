@@ -6,60 +6,38 @@ public class BJ2447 {
     static char[][] arr;
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        arr = new char[n][n];
 
-        arr = new char[N][N];
-
-        star(0, 0, N, false);
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                sb.append(arr[i][j]);
-            }
-            sb.append('\n');
+        for(int i=0;i<arr.length;i++) {
+            Arrays.fill(arr[i],' ');
         }
-        System.out.print(sb);
+
+        star(0,0, n);
+
+        for(int i=0;i<arr.length;i++) {
+            System.out.println(arr[i]);
+        }
+
+
     }
 
-    static void star(int x, int y, int N, boolean blank) {
-
-        // 공백칸일 경우
-        if (blank) {
-            for (int i = x; i < x + N; i++) {
-                for (int j = y; j < y + N; j++) {
-                    arr[i][j] = ' ';
-                }
-            }
+    public static void star(int a, int b, int n) { // 재귀호출을 반복 할 메소드이다.
+        int div = 0;
+        if(n==1) { // 재귀 호출이 끝나는 부분
+            arr[a][b] = '*';
             return;
         }
 
-        // 더이상 쪼갤 수 없는 블록일 때
-        if (N == 1) {
-            arr[x][y] = '*';
-            return;
-        }
+        div= n/3; // 입력받은 n 값을 계속 3씩 나눠준다.
 
-		/*
-		   N=27 일 경우 한 블록의 사이즈는 9이고,
-		   N=9 일 경우 한 블록의 사이즈는 3이듯
-		   해당 블록의 한 칸을 담을 변수를 의미 size
-
-		   count는 별 출력 누적을 의미
-		 */
-
-        int size = N / 3;
-        int count = 0;
-        for (int i = x; i < x + N; i += size) {
-            for (int j = y; j < y + N; j += size) {
-                count++;
-                if (count == 5) { // 공백 칸일 경우
-                    star(i, j, size, true);
-                } else {
-                    star(i, j, size, false);
-                }
+        for(int i=0;i<3;i++) { //3x3크기의 별을 만든다.
+            for(int j=0;j<3;j++) {
+                if(i==1 && j ==1) continue;
+                star(a+(div*i),b+(div*j),div); //시작점을 옮겨준다. 27의 경우 (0,0) (0,9) 식으로 옮겨간다.
             }
         }
+
     }
 }
