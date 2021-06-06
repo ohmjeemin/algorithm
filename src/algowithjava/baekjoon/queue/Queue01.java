@@ -1,4 +1,4 @@
-package algowithjava.baekjoon;
+package algowithjava.baekjoon.queue;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

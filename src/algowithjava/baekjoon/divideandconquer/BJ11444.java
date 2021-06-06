@@ -1,4 +1,4 @@
-package algowithjava.baekjoon.DivideAndconquer;
+package algowithjava.baekjoon.divideandconquer;
 
 import java.util.*;
 public class BJ11444 {

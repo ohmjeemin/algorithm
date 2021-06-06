@@ -1,4 +1,4 @@
-package algowithjava.baekjoon;
+package algowithjava.baekjoon.stack;
 
 import java.util.ArrayList;
 import java.util.List;
