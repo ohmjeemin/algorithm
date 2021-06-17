@@ -1,6 +1,9 @@
 package algowithjava.baekjoon.bruteforce;
 import java.util.*;
-
+/*
+ * 체스판 다시 칠하기
+ *
+ * */
 public class BJ1018 {
 
    static int N; // 세로

@@ -2,8 +2,8 @@ package algowithjava.baekjoon.bruteforce;
 
 import java.util.Scanner;
 /*
-* 체스판 다시 칠하기
-* 
+* 영화감독 숌
+*
 * */
 public class BJ1436 {
     public static void main(String[] args) {
