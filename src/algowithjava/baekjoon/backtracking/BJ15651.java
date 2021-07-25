@@ -5,48 +5,37 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BJ15650 {
+public class BJ15651 {
     /*
-    * 1부터 N까지의 수 중 오름차순이면서 M의 길이까지 나열 가능한 수열
-    * - 고른 수열은 오름차순이어야 한다.
-    * */
-    public static int[] arr;
-    public static int N, M;
-    public static StringBuilder sb = new StringBuilder();
+     * 1부터 N까지 자연수 중에서 M개를 고른 수열
+     * 같은 수를 여러번 골라도 된다.
+     * */
+    private static int[] arr;
+    private static int N, M;
+    private static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
         arr = new int[M];
-
-        dfs(1,0);
-
+        dfs(0);
         System.out.println(sb);
     }
 
-    //at은 어디서부터 시작하는지를 의미
-    public static void dfs(int at,  int depth) {
-
+    public static void dfs(int depth) {
         if(depth == M) {
-            for(int val : arr) {
-               sb.append(val).append(" ");
+            for(int value : arr) {
+                sb.append(value).append(" ");
             }
             sb.append("\n");
             return;
         }
-
-        for(int i=at; i <=N; i++) {
-
-            arr[depth] = i;
-            dfs(i+1, depth+1);
-
+        for(int i=0; i<N; i++) {
+            arr[depth] = i + 1;
+            dfs(depth+1);
         }
-
     }
-
- }
+}
