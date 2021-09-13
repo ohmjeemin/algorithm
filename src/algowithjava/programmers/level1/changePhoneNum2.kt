@@ -1,13 +1,7 @@
 package algowithjava.programmers.level1
 
-fun solution(phone_number: String): String {
-    var answer = phone_number.toCharArray()
-    for(i in 0 until answer.size-4) {
-        answer[i] = '*'
+class Solution {
+    fun solution(phone_number: String): String {
+        return "${"".padStart(phone_number.length - 4, '*')}${phone_number.takeLast(4)}"
     }
-    return String(answer)
-}
-
-fun main() {
-    solution("01033334444")
 }
