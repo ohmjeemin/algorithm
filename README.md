@@ -27,5 +27,65 @@
 
 
 
+### ✏️나의 풀이
 
+```jsx
+class Solution {
+	public String solution(String phone_number) {
+	String answer = "";
+	for(int i=0; i<phone_number.length()-4; i++) {
+		answer += "*";
+	}
+	answer += phone_number.substring(phone_number.length()-4);
+	//answer += phone_number.substring(phone_number.length()-4, phone_number.length());
+	return answer;
+	}
+}
+```
+
+1. 휴대폰 번호 뒤에 4자리 빼고 *로 바꾸고 
+2. 뒤에 4자리를 붙였다.
+3. ‼️substring()에서 끝 인덱스가 마지막 인덱스랑 일치하면 안써도 됨
+
+### ✏️다른 사람의 풀이
+
+```jsx
+class Solution {
+  public String solution(String phone_number) {
+     char[] ch = phone_number.toCharArray();
+     for(int i = 0; i < ch.length - 4; i ++){
+         ch[i] = '*';
+     }
+     return String.valueOf(ch);
+  }
+}
+```
+
+1. 문자열을 char array로 바꾸고
+2. 뒤에 4자리 빼고 *로 바꾸고
+3. String.valueOf( )를 통해 문자열로 바꿨다.
+
+### ✏️코틀린으로 짠 것
+
+```jsx
+var answer = phone_number.toCharArray()
+    for(i in 0 until answer.size-4) {
+        answer[i] = '*'
+    }
+    return String(answer)
+```
+
+### ✏️다른 사람이 코틀린으로 짠 것
+
+```jsx
+class Solution {
+    fun solution(phone_number: String): String {
+        return "${"".padStart(phone_number.length - 4, '*')}${phone_number.takeLast(4)}"
+    }
+}
+```
+
+**.padStart(length, char)**
+
+**.takeLast(N)**
 
