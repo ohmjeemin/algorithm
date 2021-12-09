@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 public class Main2 {
     public String solution(String str) {
-        String answer = "";
-        str=str.toUpperCase();
         StringBuilder sb = new StringBuilder();
-        for(int i=0; i<str.length(); i++){
-            String t = String.valueOf(str.charAt(i)).toUpperCase();
-            if(t.equals(String.valueOf(str.charAt(i)))) {
-                sb.append(t.toLowerCase());
+
+        for(char x: str.toCharArray()) {
+            String u = String.valueOf(x).toUpperCase();
+            if(u.equals(String.valueOf(x))) {
+                sb.append(u.toLowerCase());
             }else {
-                sb.append(String.valueOf(str.charAt(i)).toUpperCase());
+                sb.append(String.valueOf(x).toUpperCase());
             }
         }
 
