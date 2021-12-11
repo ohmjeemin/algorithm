@@ -5,14 +5,17 @@ import java.util.Scanner;
 public class Main3 {
     public String solution(String str) {
         String[] arr = str.split(" ");
-        int maxIdx = 0;
-        for(int i=1; i<arr.length; i++) {
-            if(arr[i-1].length() < arr[i].length()) {
-                maxIdx = i;
+        int max = Integer.MIN_VALUE;
+        String answer = "";
+
+        for(String x: arr) {
+            int len = x.length();
+            if(len > max) {
+                max = len;
+                answer = x;
             }
         }
-
-        return arr[maxIdx];
+        return answer;
     }
 
     public static void main(String[] args){
