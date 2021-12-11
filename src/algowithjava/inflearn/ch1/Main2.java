@@ -11,7 +11,7 @@ public class Main2 {
             if(u.equals(String.valueOf(x))) {
                 sb.append(u.toLowerCase());
             }else {
-                sb.append(String.valueOf(x).toUpperCase());
+                sb.append(u);
             }
         }
 
