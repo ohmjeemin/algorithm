@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 
 /*
-* 중복 문자 제거
-* 소문자로 된 한개의 문자열이 입력되면 중복된 문자를 제거하고 출력하는 프로그램을 작성하세요
-* 중복이 제거된 문자열의 각 문자는 원래 문자열의 순서를 유지합니다.
+* 회문 문자열
+* 앞에서 읽을 때나 뒤에서 읽을 때나 같은 문자열을 회문 문자열이라고 합니다.
+* 문자열이 입력되면 해당 문자열이 회문 문자열이면 "YES" 회문 문자열이 아니면 "NO"를 출력하는 프로그램을 작성하세요.
+* 단 회문을 검사할 때 대소문자를 구분하지 않습니다...
 * */
-public class Main6 {
+public class Main7 {
     public String solution(String str) {
         StringBuilder answer = new StringBuilder();
         ArrayList<Character> list = new ArrayList<>();
@@ -25,7 +26,7 @@ public class Main6 {
     }
 
     public static void main(String[] args){
-        Main6 main = new Main6();
+        Main7 main = new Main7();
         Scanner in=new Scanner(System.in);
         String str = in.next();
         System.out.println(main.solution(str));
