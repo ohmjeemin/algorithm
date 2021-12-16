@@ -15,11 +15,12 @@ public class Main7 {
         StringBuilder answer = new StringBuilder();
         ArrayList<Character> list = new ArrayList<>();
 
-        for(char x: str.toCharArray()) {
-            if(!list.contains(x)) {
-                list.add(x);
-                answer.append(x);
-            }
+        int lt = 0;
+        int rt = str.length() -1;
+        str.toCharArray();
+
+        while(lt < rt) {
+
         }
 
         return answer.toString();
