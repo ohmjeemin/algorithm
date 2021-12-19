@@ -1,6 +1,5 @@
 package algowithjava.inflearn.ch1;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -12,18 +11,15 @@ import java.util.Scanner;
 * */
 public class Main7 {
     public String solution(String str) {
-        StringBuilder answer = new StringBuilder();
-        ArrayList<Character> list = new ArrayList<>();
-
-        int lt = 0;
-        int rt = str.length() -1;
-        str.toCharArray();
-
-        while(lt < rt) {
-
+        // 1) 짝수 (i < str.length() / 2) 만큼 돌기
+        // 2) 홀수도 가장 가운데는 상관 없으니까 짝수랑 똑같이 돈다.
+        String answer = "YES";
+        str = str.toUpperCase();
+        int len = str.length();
+        for(int i=0; i<len/2; i++) {
+            if(str.charAt(i)!=str.charAt(len-1-i)) answer = "NO";
         }
-
-        return answer.toString();
+        return answer;
     }
 
     public static void main(String[] args){
