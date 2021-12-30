@@ -17,7 +17,10 @@ public class Main7 {
         str = str.toUpperCase();
         int len = str.length();
         for(int i=0; i<len/2; i++) {
-            if(str.charAt(i)!=str.charAt(len-1-i)) answer = "NO";
+            if (str.charAt(i) != str.charAt(len - 1 - i)) {
+                answer = "NO";
+                break;
+            }
         }
         return answer;
     }

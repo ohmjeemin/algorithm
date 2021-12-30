@@ -10,10 +10,7 @@ import java.util.Scanner;
 * */
 public class Main9 {
     public String solution(String str) {
-        // 1) 짝수 (i < str.length() / 2) 만큼 돌기
-        // 2) 홀수도 가장 가운데는 상관 없으니까 짝수랑 똑같이 돈다.
         StringBuilder answer = new StringBuilder();
-        //replaceAll에 정규식 슬 수 있음
         for(char c: str.toCharArray()) {
             if(Character.isDigit(c)) answer.append(c);
         }
