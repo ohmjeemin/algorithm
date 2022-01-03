@@ -9,9 +9,9 @@ import java.util.Scanner;
 * */
 public class Main1 {
     public String solution(int[] array) {
-        StringBuilder answer = new StringBuilder(array[0] + "");
-        for(int i=1; i<array.length-1; i++){
-            if(array[i-1]<array[i]) answer.append(array[i]);
+        StringBuilder answer = new StringBuilder(array[0] + " ");
+        for(int i=1; i<array.length; i++){
+            if(array[i-1]<array[i]) answer.append(array[i]).append(" ");
         }
         return answer.toString();
     }
