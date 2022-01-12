@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 
 /*
-보이는 학생
+가위바위보 - 총 N번의 게임을 하여 A가 이기면 A를 출력하고, B가 이기면 B를 출력합니다. 비길 경우에는 D를 출력합니다.
 * */
-public class Main2 {
+public class Main3 {
     public int solution(int[] array) {
         StringBuilder answer = new StringBuilder(array[0] + " ");
         int cnt = 1;
@@ -22,7 +22,7 @@ public class Main2 {
     }
 
     public static void main(String[] args){
-        Main2 main = new Main2();
+        Main3 main = new Main3();
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         int[] arr = new int[n];
