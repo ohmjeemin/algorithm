@@ -9,7 +9,6 @@ import java.util.Scanner;
 * */
 public class Main2 {
     public int solution(int[] array) {
-        StringBuilder answer = new StringBuilder(array[0] + " ");
         int cnt = 1;
         int max = array[0];
         for(int i=1; i<array.length; i++){
