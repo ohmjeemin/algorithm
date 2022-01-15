@@ -15,21 +15,21 @@ public class Main3 {
         for(int i=0; i<arr1.length; i++) {
             if(arr1[i]==1) { // 가위를 냈을 때
                 switch (arr2[i]) {
-                    case 1 : sb.append("D");
-                    case 2 : sb.append("B");
-                    case 3 : sb.append("A");
+                    case 1 : sb.append("D");break;
+                    case 2 : sb.append("B");break;
+                    case 3 : sb.append("A");break;
                 }
             }else if(arr1[i]==2) { // 바위를 냈을 때
                 switch (arr2[i]) {
-                    case 1 : sb.append("A");
-                    case 2 : sb.append("D");
-                    case 3 : sb.append("B");
+                    case 1 : sb.append("A");break;
+                    case 2 : sb.append("D");break;
+                    case 3 : sb.append("B");break;
                 }
             }else { // 보를 냈을 때
                 switch (arr2[i]) {
-                    case 1 : sb.append("B");
-                    case 2 : sb.append("A");
-                    case 3 : sb.append("D");
+                    case 1 : sb.append("B");break;
+                    case 2 : sb.append("A");break;
+                    case 3 : sb.append("D");break;
                 }
             }
         }
@@ -43,16 +43,15 @@ public class Main3 {
         int[] arr1 = new int[n];
         int[] arr2 = new int[n];
 
-        //TODO 여기서 arr1, arr2 받아서
-        String[] sArr1 = in.nextLine().split(" ");
         for(int i=0; i<n; i++) {
-            arr1[i] = Integer.parseInt(sArr1[i]);
+            arr1[i] = in.nextInt();
         }
-        String[] sArr2 = in.nextLine().split(" ");
         for(int i=0; i<n; i++) {
-            arr2[i] = Integer.parseInt(sArr2[i]);
+            arr2[i] = in.nextInt();
         }
-        System.out.println(main.solution(arr1, arr2));
+        for(char x: main.solution(arr1, arr2).toCharArray()) {
+            System.out.println(x);
+        }
     }
 }
 
