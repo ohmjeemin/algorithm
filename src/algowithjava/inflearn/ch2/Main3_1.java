@@ -10,7 +10,6 @@ import java.util.Scanner;
 * */
 public class Main3_1 {
     public String solution(int[] arr1, int[] arr2) {
-        //TODO 여기서
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<arr1.length; i++) {
             if(arr1[i]==arr2[i]) sb.append("D");
