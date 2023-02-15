@@ -8,16 +8,19 @@ public class BJ25304 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int price = Integer.parseInt(br.readLine());
-        int n = Integer.parseInt(br.readLine());
+        int totalPrice = Integer.parseInt(br.readLine());
+        int loopCnt = Integer.parseInt(br.readLine());
         int sum = 0;
-        for(int i=0; i<n; i++) {
+        for(int i=0; i<loopCnt; i++) {
             String[] priceToCnt = br.readLine().split(" ");
-            int total = Integer.parseInt(priceToCnt[0]) * Integer.parseInt(priceToCnt[1]);
-            sum += total;
+            int itemPrice = Integer.parseInt(priceToCnt[0]) * Integer.parseInt(priceToCnt[1]);
+            sum += itemPrice;
         }
-        if(price == sum) System.out.println("Yes");
-        else System.out.println("No");
+        if(totalPrice == sum) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
     }
 
 }
