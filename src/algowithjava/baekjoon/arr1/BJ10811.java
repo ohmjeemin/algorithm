@@ -16,14 +16,21 @@ public class BJ10811 {
         for(int i=1; i<=N; i++) {
             arr[i] = i;
         }
+
         int M = Integer.parseInt(st.nextToken());
-        for(int i=0; i<M; i++) {
+
+        for(int k=0; k<M; k++) {
             st = new StringTokenizer(br.readLine(), " ");
-            int first = Integer.parseInt(st.nextToken());
-            int second = Integer.parseInt(st.nextToken());
-            int temp = arr[first];
-            arr[second] = arr[first];
-            arr[first] = temp;
+            int i = Integer.parseInt(st.nextToken());
+            int j = Integer.parseInt(st.nextToken());
+            while(i<j) {
+                int temp = arr[i];
+                arr[i++] = arr[j];
+                arr[j--] = temp;
+            }
+        }
+        for(int i=1; i<=N; i++) {
+            System.out.print(arr[i]+" ");
         }
     }
 }
