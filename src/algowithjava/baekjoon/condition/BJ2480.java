@@ -11,17 +11,29 @@ public class BJ2480 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         st = new StringTokenizer(br.readLine(), " ");
-        int[] arr = new int[3];
-        arr[0] = Integer.parseInt(st.nextToken());
-        arr[1] = Integer.parseInt(st.nextToken());
-        arr[2] = Integer.parseInt(st.nextToken());
-
-        if(arr[0] == arr[1] || arr[0] == arr[2] || arr[1] == arr[2]) {
-
+        int a, b, c;
+        a = Integer.parseInt(st.nextToken());
+        b = Integer.parseInt(st.nextToken());
+        c  = Integer.parseInt(st.nextToken());
+        int max;
+        if(a != b && a != c && b != c) {
+            if(a > b) {
+                if(c > a) max = c;
+                else max = a;
+            }else {
+                if(c > b) max = c;
+                else max = b;
+            }
+            System.out.println(max * 100);
         }else {
-            int max =0;
-            for(int i=0; i<arr.length; i++){
-                if(max < arr[i]) max = arr[i];
+            if(a == b && a == c) {
+                System.out.println(10000 + a * 1000);
+            }else {
+                if(a == b || a == c) {
+                    System.out.println(1000 + a * 100);
+                }else {
+                    System.out.println(1000 + b * 100);
+                }
             }
 
         }
