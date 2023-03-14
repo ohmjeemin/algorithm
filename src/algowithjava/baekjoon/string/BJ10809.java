@@ -10,8 +10,9 @@ public class BJ10809 {
         String word = br.readLine();
         String str = "abcdefghijklmnopqrstuvwxyz";
         StringBuilder sb = new StringBuilder();
-        for(char c : word.toCharArray()) {
-            sb.append(str.indexOf(c)+" ");
+        for(char c : str.toCharArray()) {
+            sb.append(word.indexOf(c)+" ");
         }
+        System.out.println(sb);
     }
 }
