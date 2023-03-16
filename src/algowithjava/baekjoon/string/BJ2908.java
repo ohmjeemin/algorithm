@@ -12,9 +12,10 @@ public class BJ2908 {
         st = new StringTokenizer(br.readLine(), " ");
         String str1 = st.nextToken();
         String str2 = st.nextToken();
-        char[] charArr1 = str1.toCharArray();
-
-        int b = Integer.parseInt(st.nextToken());
-
+        StringBuilder sb = new StringBuilder();
+        int num1 = Integer.parseInt(sb.append(str1).reverse().toString());
+        sb = new StringBuilder();
+        int num2 = Integer.parseInt(sb.append(str2).reverse().toString());
+        if(num1>num2) System.out.println(num1); else System.out.println(num2);
     }
 }
