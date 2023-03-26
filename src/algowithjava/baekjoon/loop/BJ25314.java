@@ -18,4 +18,4 @@ public class BJ25314 {
         new BJ25314().solution();
     }
 }
-}
+
