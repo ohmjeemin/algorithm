@@ -14,7 +14,8 @@ public class BJ2751_2 {
             arr[i] = Integer.parseInt(br.readLine());
         }
         Arrays.sort(arr);
-        for (int i=loopCnt; i>0; i--) {
+        for (int i=loopCnt-1; i>=0; i--) {
+            //loopCnt-1 임을 주의할것
             System.out.println(arr[i]);
         }
     }
